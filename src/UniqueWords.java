@@ -10,15 +10,25 @@ public class UniqueWords
    public static int countUnique(ArrayList<String> list)
    {
 	  int count = 0;
+	  boolean uniqueWords = false;
 	  
-      for (int i = 0; i < list.size(); i++)
-      {		 for (int j = 0; j < list.size(); j++)
+      for (int i = 0; i < list.size(); i++)	  
+      {		
+    	  for (int j = 0; j < list.size(); j++)
 		 {
-			
+    	  if(list.get(i) == list.get(j)) {
+    		  uniqueWords = true;
+    		  break;        
+    		  } 
 		 }
+    	  
+    	  if (uniqueWords == false) {
+    		  count++;  	  
+    		  }
+		 }
+      
+      	return count;
       }
-	  return count;
-   }
 
    public static void main(String[] args)
    {
